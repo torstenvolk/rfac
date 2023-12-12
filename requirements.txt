@@ -3,7 +3,7 @@ praw
 wordcloud
 matplotlib
 pandas
-
+st_aggrid
 
 
 
