@@ -4,7 +4,7 @@ wordcloud
 matplotlib
 pandas
 AgGrid
-st_aggrid
+
 
 
 
