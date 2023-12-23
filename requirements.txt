@@ -3,3 +3,4 @@ praw
 wordcloud
 matplotlib
 pandas
+openai
