@@ -1,7 +1,6 @@
 import praw
 from datetime import datetime
 import pandas as pd
-from st_aggrid import AgGrid
 import openai
 import os
 import streamlit as st
