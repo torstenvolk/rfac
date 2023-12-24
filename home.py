@@ -1,7 +1,7 @@
 import praw
 from datetime import datetime
 import pandas as pd
-import openai
+from openai import OpenAI
 import os
 import streamlit as st
 st.set_page_config(layout="wide")
