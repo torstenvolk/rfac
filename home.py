@@ -9,11 +9,20 @@ st.set_page_config(layout="wide")
 st.title = 'Reddit Posts and Comments'
 
 # Load the API key from Streamlit secrets
-client_id = st.secrets["reddit"]["client_id"]
-client_secret = st.secrets["reddit"]["client_secret"]
-username = st.secrets["reddit"]["username"]
-password = st.secrets["reddit"]["password"]
-user_agent = st.secrets["reddit"]["user_agent"]
+
+openai_api_key = os.environ.get('openai_api_key')
+client_id = os.environ.get('client_id')
+client_secret = os.environ.get('client_secret')
+username = os.environ.get('username')
+password = os.environ.get('password')
+user_agent = os.environ.get('user_agent')
+
+#openai.api_key = st.secrets["openai"]["openai_api_key"]
+#client_id = st.secrets["reddit"]["client_id"]
+#client_secret = st.secrets["reddit"]["client_secret"]
+#username = st.secrets["reddit"]["username"]
+#password = st.secrets["reddit"]["password"]
+#user_agent = st.secrets["reddit"]["user_agent"]
 
 # Initialize the Reddit instance
 reddit = praw.Reddit(client_id=client_id,
@@ -191,7 +200,6 @@ def create_term_frequency_df(summaries):
 
 
 
-openai.api_key = st.secrets["openai"]["openai_api_key"]
 
 def estimate_token_count(text):
     """
