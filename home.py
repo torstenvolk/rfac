@@ -67,7 +67,7 @@ def get_submissions(subreddit_name):
 #@st.cache_data
 def get_flattened_submissions_with_search(subreddits, search_term=None, progress_text=None):
     all_data = []
-    max_posts = 200  # Maximum number of posts per subreddit
+    max_posts = 20  # Maximum number of posts per subreddit
     max_comments_per_post = 10
 
     if not subreddits:
