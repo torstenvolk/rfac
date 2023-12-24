@@ -45,7 +45,7 @@ def refresh_data():
 @st.cache_data
 def get_submissions(subreddit_name):
     subreddit = reddit.subreddit(subreddit_name)
-    submissions = subreddit.new(limit=200)
+    submissions = subreddit.new(limit=20)
     submissions_with_comments = []
     for submission in submissions:
         comments = [comment.body for comment in submission.comments.list()[:10]]  # Fetching top 10 comments
