@@ -166,9 +166,9 @@ def extract_key_terms(text):
     """
     Function to extract key terms from the text using OpenAI.
     """
-    response = openai.ChatCompletion.create(
+    response = openai_client.Completion.create(
         model="gpt-4-1106-preview",
-        messages=[
+        prompt=[
             {
                 "role": "system",
                 "content": "You are a helpful assistant."
@@ -228,9 +228,9 @@ def summarize_text(text, max_input_tokens, max_completion_tokens=4096):
     if estimate_token_count(text) > max_input_tokens:
         text = truncate_text(text, max_input_tokens)
 
-    response = openai.ChatCompletion.create(
+    response = openai_client.ChatCompletion.create(
         model="gpt-4-1106-preview",
-        messages=[
+        prompt=[
             {"role": "system", "content": "You are a helpful assistant. You focus on identifying and summarizing key themes within text."},
             {"role": "user", "content": f"Identify and summarize key topic and subtopics in the following information:\n\n{text}. Do not list individual posts but always summarize the bigger picture topics."}
         ],
